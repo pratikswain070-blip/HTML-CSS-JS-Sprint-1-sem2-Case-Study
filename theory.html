@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Academy | Theory</title>
+    <meta name="description"
+        content="Learn cybersecurity fundamentals, types of attacks, and prevention strategies in three in-depth modules.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="theory.css">
+</head>
+
+<body>
+    <!-- Background effect -->
+    <div class="page-grid"></div>
+
+    <!-- Top navigation -->
+    <nav class="top-nav" id="main-nav">
+        <a href="home.html" class="logo">
+            <span class="brand-mark">&#9632;</span>
+            CyberGuard<span class="blink-mark">_</span>Academy
+        </a>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="theory.html" class="active">Theory</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="simulation.html">Practice Labs</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li>
+                <a href="index.html" class="nav-user-btn" id="nav-user-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                    <span id="nav-user-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-wrap">
+        <div class="page-box">
+
+            <div class="section-header">
+                <div class="section-badge">Learning Hub</div>
+                <h2 class="section-title">Master the Fundamentals</h2>
+                <p class="section-subtitle">Structured, beginner-friendly modules that build your security intuition
+                    from the ground up.</p>
+            </div>
+
+            <!-- Topic buttons -->
+            <div class="topic-tabs">
+                <button class="topic-btn active" data-tab="what-is-cybersecurity">
+                    <span class="tab-icon">[01]</span> What is Cybersecurity
+                </button>
+                <button class="topic-btn" data-tab="types-of-attacks">
+                    <span class="tab-icon">[02]</span> Types of Attacks
+                </button>
+                <button class="topic-btn" data-tab="prevention-strategies">
+                    <span class="tab-icon">[03]</span> Prevention Strategies
+                </button>
+            </div>
+
+            <!-- Topic 1 -->
+            <div id="what-is-cybersecurity" class="topic-page active">
+                <div class="topic-hero">
+                    <div class="hero-copy">
+                        <h2>What is Cybersecurity?</h2>
+                        <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital
+                            attacks. In our hyper-connected world, it is the shield that guards everything from your
+                            personal photos to national infrastructure.</p>
+                    </div>
+                    <div class="hero-mark">&#9632;</div>
+                </div>
+
+                <div class="topic-grid">
+                    <div class="info-box">
+                        <h3 class="box-title">Why Does it Matter?</h3>
+                        <p>According to IBM's 2023 Cost of a Data Breach report, the average data breach costs
+                            organizations <strong class="highlight">$4.45 million.</strong> At an individual level, a
+                            single attack can mean identity theft, financial loss, or permanent loss of private data.
+                        </p>
+                        <p>Everything from the power grid to your bank, your hospital's machines, and your personal
+                            laptop is a potential target. Cybersecurity is not an IT-only problem — it is everyone's
+                            responsibility.</p>
+                        <div class="note-box note-warn">
+                            <span class="note-mark">(!)</span>
+                            <div>
+                                <strong>Did You Know?</strong> A cyberattack occurs every <strong>39 seconds</strong> on
+                                average. Most targets are everyday users, not just corporations.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">The CIA Triad — The 3 Pillars</h3>
+                        <p>Every security decision revolves around three core principles, collectively known as the
+                            <strong class="highlight">CIA Triad</strong>. Think of it like securing a physical bank
+                            vault:
+                        </p>
+                        <div class="triad-grid">
+                            <div class="triad-card confidentiality">
+                                <div class="pillar-icon">&#9632;</div>
+                                <h4>Confidentiality</h4>
+                                <p>Only authorized people can access data.</p>
+                                <em>Analogy: The vault is locked — only the manager knows the combination.</em>
+                                <div class="card-notes"><strong>Examples:</strong> Encryption, Passwords, Access
+                                    Controls</div>
+                            </div>
+                            <div class="triad-card integrity">
+                                <div class="pillar-icon">&#10003;</div>
+                                <h4>Integrity</h4>
+                                <p>Data must be accurate and unmodified.</p>
+                                <em>Analogy: Nobody can secretly alter the financial ledgers inside the vault.</em>
+                                <div class="card-notes"><strong>Examples:</strong> Checksums, Digital Signatures,
+                                    Audit Logs</div>
+                            </div>
+                            <div class="triad-card availability">
+                                <div class="pillar-icon">&#9654;</div>
+                                <h4>Availability</h4>
+                                <p>Systems must be accessible when needed.</p>
+                                <em>Analogy: The bank's doors open on time so customers can access their money.</em>
+                                <div class="card-notes"><strong>Examples:</strong> Backups, Redundancy, Load
+                                    Balancers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Who Are Threat Actors?</h3>
+                        <p>Not all hackers are the same. The cybersecurity world classifies them by intent:</p>
+                        <div class="fact-list">
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-danger">Black Hat</span></div>
+                                <div class="fact-text">Malicious hackers who break into systems for personal gain,
+                                    stealing data or causing damage.</div>
+                            </div>
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-success">White Hat</span></div>
+                                <div class="fact-text">Ethical hackers hired to test security. They find vulnerabilities
+                                    before criminals do. (Also called "Penetration Testers")</div>
+                            </div>
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-warn">Grey Hat</span></div>
+                                <div class="fact-text">Act without explicit permission but usually don't have malicious
+                                    intent. May report findings after the fact.</div>
+                            </div>
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-info">Script Kiddie</span></div>
+                                <div class="fact-text">Inexperienced individuals using pre-built tools without
+                                    understanding them. Still dangerous.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Key Cybersecurity Terminology</h3>
+                        <div class="term-grid">
+                            <div class="term-box"><strong class="highlight">Vulnerability</strong>
+                                <p>A weakness in a system that can be exploited.</p>
+                            </div>
+                            <div class="term-box"><strong class="highlight">Exploit</strong>
+                                <p>Code or technique used to take advantage of a vulnerability.</p>
+                            </div>
+                            <div class="term-box"><strong class="highlight">Zero-Day</strong>
+                                <p>A vulnerability unknown to the defender and for which no patch exists yet.</p>
+                            </div>
+                            <div class="term-box"><strong class="highlight">Firewall</strong>
+                                <p>A network security device that monitors and filters traffic based on rules.</p>
+                            </div>
+                            <div class="term-box"><strong class="highlight">Encryption</strong>
+                                <p>Converting data to an unreadable format. Only those with the correct key can read it.
+                                </p>
+                            </div>
+                            <div class="term-box"><strong class="highlight">VPN</strong>
+                                <p>Virtual Private Network — creates a secure, encrypted tunnel for your internet
+                                    traffic.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div id="types-of-attacks" class="topic-page hidden">
+                <div class="topic-hero">
+                    <div class="hero-copy">
+                        <h2>Types of Cyber Attacks</h2>
+                        <p>Understanding how attackers think and operate is the first step to building an effective
+                            defense. This module covers the most common and dangerous attack categories you need to
+                            know.</p>
+                    </div>
+                    <div class="hero-mark">&#9888;</div>
+                </div>
+
+                <div class="topic-grid">
+                    <div class="info-box">
+                        <h3 class="box-title">1. Malware — Malicious Software</h3>
+                        <p>Malware is the umbrella term for any software intentionally designed to harm, disrupt, or
+                            gain unauthorized access to a system. It is the most common attack vector.</p>
+                        <div class="attack-grid">
+                            <div class="attack-box">
+                                <div class="attack-mark">[ v ]</div>
+                                <h4>Virus</h4>
+                                <p>Attaches to legitimate programs. Activates and spreads when the host program runs.
+                                    Can corrupt files or crash systems.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ t ]</div>
+                                <h4>Trojan Horse</h4>
+                                <p>Disguised as legitimate software (e.g., a free game or utility). Once installed, it
+                                    creates a hidden backdoor for attackers.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ $ ]</div>
+                                <h4>Ransomware</h4>
+                                <p>Encrypts all files on the victim's device. The attacker then demands a cryptocurrency
+                                    payment (ransom) to restore access.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ ? ]</div>
+                                <h4>Spyware</h4>
+                                <p>Silently monitors your activities — recording keystrokes, screenshots, and browsing
+                                    history — and sends them to the attacker.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ b ]</div>
+                                <h4>Botnet</h4>
+                                <p>Your infected device becomes a "bot" in a network. The attacker remote-controls
+                                    thousands of bots to launch coordinated attacks.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ w ]</div>
+                                <h4>Worm</h4>
+                                <p>Unlike viruses, worms spread on their own across networks without needing user
+                                    action, consuming bandwidth and system resources.</p>
+                            </div>
+                        </div>
+                        <div class="note-box note-info">
+                            <span class="note-mark">(i)</span>
+                            <div><strong>Real-World Example:</strong> The WannaCry ransomware attack (2017) infected
+                                over 300,000 computers across 150 countries, including the UK's NHS hospitals, causing
+                                an estimated $4 billion in damage.</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">2. Social Engineering &amp; Phishing</h3>
+                        <p>Rather than attacking software, social engineering attacks <strong class="highlight">exploit
+                                human psychology</strong>. You are the target, not your computer. Attackers manipulate
+                            trust, fear, and urgency to get what they want.</p>
+                        <div class="phish-grid">
+                            <div class="phish-box"><strong class="highlight">Email Phishing</strong>
+                                <p>Mass emails impersonating trusted brands (banks, Netflix, Amazon) to steal
+                                    credentials. The most common type.</p>
+                            </div>
+                            <div class="phish-box"><strong class="highlight">Spear Phishing</strong>
+                                <p>A highly targeted phishing attack aimed at a specific individual, using personal
+                                    details to craft a convincing lure.</p>
+                            </div>
+                            <div class="phish-box"><strong class="highlight">Vishing &amp; Smishing</strong>
+                                <p>Phishing via phone call (Vishing) or SMS text message (Smishing). "Your bank account
+                                    has been flagged, call us now."</p>
+                            </div>
+                            <div class="phish-box"><strong class="highlight">Whaling</strong>
+                                <p>Targeting high-profile executives (CEOs, CFOs) — the "big fish." Attackers aim to
+                                    authorize large financial transfers.</p>
+                            </div>
+                        </div>
+                        <p><strong>Red Flags to Look For:</strong> Suspicious sender domains (paypa<span
+                                class="highlight">1</span>.com), urgency ("Act within 24 hours!"), requests for
+                            passwords or personal info, and suspicious links.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">3. SQL Injection (SQLi)</h3>
+                        <p>SQL (Structured Query Language) is the language databases use. When a web application accepts
+                            user input and puts it directly into a database query without checking it, an attacker can
+                            inject SQL commands instead of normal data.</p>
+                        <div class="code-box">
+                            <div class="code-tag">Vulnerable Query (NO sanitization)</div>
+                            <pre><code>SELECT * FROM users
+WHERE username = '<span class="highlight">INPUT_HERE</span>'
+AND password = '<span class="highlight">INPUT_HERE</span>'</code></pre>
+                                <div class="code-tag" style="margin-top:1rem;">Attacker injects: <code
+                                    class="inline-code">' OR 1=1 --</code></div>
+                            <pre><code>SELECT * FROM users
+WHERE username = 'admin'
+AND password = '<span class="danger-text">' OR 1=1 --</span>'</code></pre>
+                            <p class="code-text">The <code>OR 1=1</code> is always TRUE, and <code>--</code> comments
+                                out the rest. The query succeeds for any user — the attacker is now logged in as admin.
+                            </p>
+                        </div>
+                        <div class="note-box note-ok">
+                            <span class="note-mark">&#128295;</span>
+                            <div><strong>The Fix:</strong> Use <strong>Prepared Statements / Parameterized
+                                    Queries</strong>. These treat user input strictly as data, never as executable SQL
+                                commands, completely preventing this attack.</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">4. Denial of Service (DoS &amp; DDoS)</h3>
+                        <p>A Denial of Service attack aims to make a website or service unavailable by overwhelming it
+                            with fake traffic. Think of it like hundreds of cars intentionally blocking a highway so
+                            real drivers can't get through.</p>
+                        <div class="fact-list">
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-warn">DoS</span></div>
+                                <div class="fact-text">Originates from a single machine. Easier to block as it comes
+                                    from one IP address.</div>
+                            </div>
+                            <div class="fact-row">
+                                <div class="fact-tag"><span class="tag tag-danger">DDoS</span></div>
+                                <div class="fact-text">Distributed — originates from thousands of compromised bot
+                                    machines worldwide. Extremely difficult to block.</div>
+                            </div>
+                        </div>
+                        <div class="note-box note-info">
+                            <span class="note-mark">(i)</span>
+                            <div><strong>Scale:</strong> The largest DDoS attack ever recorded hit Google in 2023 at
+                                <strong>398 million requests per second</strong> — enough to overwhelm almost any
+                                server.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">5. Man-in-the-Middle (MitM) Attacks</h3>
+                        <p>In a MitM attack, the attacker secretly positions themselves between you and the server,
+                            silently intercepting and potentially altering communications. You think you're talking to
+                            your bank; you're actually talking to the attacker.</p>
+                        <div class="flow-box">
+                            <div class="flow-node">You (Client)</div>
+                            <div class="flow-arrow">→ <span class="danger-text">INTERCEPTED</span> →</div>
+                            <div class="flow-node bad-node">! Attacker</div>
+                            <div class="flow-arrow">→ <span class="danger-text">RELAYED</span> →</div>
+                            <div class="flow-node">Bank Server</div>
+                        </div>
+                        <p><strong>Common vectors:</strong> Unsecured public Wi-Fi (coffee shops, airports), Rogue Wi-Fi
+                            hotspots, ARP poisoning on local networks.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">6. Brute Force &amp; Credential Stuffing</h3>
+                        <p>These attacks target account access by systematically guessing credentials:</p>
+                        <div class="attack-grid" style="grid-template-columns: 1fr 1fr;">
+                            <div class="attack-box">
+                                <div class="attack-mark">[ ~ ]</div>
+                                <h4>Brute Force</h4>
+                                <p>Tries every possible combination of characters until the correct password is found.
+                                    Modern GPUs can test billions per second against weak passwords.</p>
+                            </div>
+                            <div class="attack-box">
+                                <div class="attack-mark">[ c ]</div>
+                                <h4>Credential Stuffing</h4>
+                                <p>Uses username/password combos leaked from other breaches. Works because millions of
+                                    people reuse the same password across multiple sites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div id="prevention-strategies" class="topic-page hidden">
+                <div class="topic-hero">
+                    <div class="hero-copy">
+                        <h2>Prevention Strategies</h2>
+                        <p>Good security isn't about being paranoid — it's about building smart habits. These
+                            evidence-based practices, applied consistently, will protect you from the overwhelming
+                            majority of cyber threats.</p>
+                    </div>
+                    <div class="hero-mark">&#9632;</div>
+                </div>
+
+                <div class="topic-grid">
+                    <div class="info-box">
+                        <h3 class="box-title">Account &amp; Password Security</h3>
+                        <div class="step-list">
+                            <div class="step-box">
+                                <div class="step-tag">01</div>
+                                <div class="step-copy">
+                                    <h4>Use a Password Manager</h4>
+                                    <p>A password manager (e.g., Bitwarden — free &amp; open source, or 1Password)
+                                        generates and stores a unique, complex password for every single site. You only
+                                        need to remember one strong master password.</p>
+                                    <div class="sample-box">
+                                        <span class="danger-text">Bad:</span> <code>sports123</code> (used on every
+                                        site)<br>
+                                        <span class="success-text">Good:</span> <code>K#9mP$2zL@nQ7!</code> (generated
+                                        per site)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">02</div>
+                                <div class="step-copy">
+                                    <h4>Enable Two-Factor Authentication (2FA / MFA)</h4>
+                                    <p>2FA adds a second verification step (a one-time code from your phone) after
+                                        entering your password. Even if an attacker steals your password, they cannot
+                                        log in without physically having your device.</p>
+                                    <p><em>Analogy: It's like a key AND a fingerprint scanner. Both are needed to open
+                                            the door.</em></p>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">03</div>
+                                <div class="step-copy">
+                                    <h4>Create Strong Passphrases</h4>
+                                    <p>A passphrase — a sequence of random words — is both highly secure and memorable.
+                                        Length is the most important factor in password strength.</p>
+                                    <div class="sample-box">
+                                        <span class="danger-text">Weak:</span> <code>P@ssw0rd</code> (cracked in seconds
+                                        despite symbols)<br>
+                                        <span class="success-text">Strong:</span> <code>BluePigeonRocket-47!</code>
+                                        (takes millions of years to crack)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Device &amp; Software Security</h3>
+                        <div class="step-list">
+                            <div class="step-box">
+                                <div class="step-tag">04</div>
+                                <div class="step-copy">
+                                    <h4>Keep Everything Updated</h4>
+                                    <p>The #1 way attackers get into systems is through known vulnerabilities in
+                                        outdated software. Update your OS, browser, and apps regularly. Enable
+                                        auto-update wherever possible.</p>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">05</div>
+                                <div class="step-copy">
+                                    <h4>Use Reputable Antivirus &amp; Anti-Malware</h4>
+                                    <p>Modern security suites provide real-time threat detection, web filtering
+                                        (blocking malicious sites), and ransomware protection. Windows Defender is a
+                                        solid free baseline for Windows users.</p>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">06</div>
+                                <div class="step-copy">
+                                    <h4>Encrypt Your Devices</h4>
+                                    <p>Enable full-disk encryption (BitLocker on Windows, FileVault on Mac) so that if
+                                        your device is stolen, the thief cannot read your files without the decryption
+                                        key.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Network &amp; Browsing Safety</h3>
+                        <div class="step-list">
+                            <div class="step-box">
+                                <div class="step-tag">07</div>
+                                <div class="step-copy">
+                                    <h4>Avoid Public Wi-Fi for Sensitive Tasks</h4>
+                                    <p>Public Wi-Fi networks (cafes, airports, hotels) are prime hunting grounds for
+                                        Man-in-the-Middle attacks. Never access your bank, email, or any sensitive
+                                        account on public Wi-Fi. If you must, use a trusted VPN.</p>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">08</div>
+                                <div class="step-copy">
+                                    <h4>Check for HTTPS</h4>
+                                    <p>Before entering any password or personal data on a website, verify the address
+                                        starts with <strong class="highlight">https://</strong> (the padlock icon). This
+                                        means the connection is encrypted.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Defending Against Phishing</h3>
+                        <div class="defense-grid">
+                            <div class="defense-box">
+                                <div class="defense-mark">[ @ ]</div>
+                                <h4>Inspect the Sender</h4>
+                                <p>The display name can say anything. Always check the actual email address. <span
+                                        class="danger-text">support@paypa<strong>l-alert.com</strong></span> is NOT
+                                    PayPal.</p>
+                            </div>
+                            <div class="defense-box">
+                                <div class="defense-mark">[ ! ]</div>
+                                <h4>Resist Urgency</h4>
+                                <p>"Act NOW or lose your account!" is a manipulation tactic. Legitimate companies give
+                                    you time. Stop, breathe, verify independently.</p>
+                            </div>
+                            <div class="defense-box">
+                                <div class="defense-mark">[ &gt; ]</div>
+                                <h4>Hover Over Links</h4>
+                                <p>Hover over any link before clicking it. The real destination URL will appear in the
+                                    bottom of your browser. Verify it matches the legitimate domain.</p>
+                            </div>
+                            <div class="defense-box">
+                                <div class="defense-mark">[ ^ ]</div>
+                                <h4>Beware of Attachments</h4>
+                                <p>Never open unexpected email attachments, especially <code>.exe</code>,
+                                    <code>.zip</code>, <code>.docm</code> files. When in doubt, call the sender to
+                                    verify.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="note-box note-ok" style="margin-top: 2rem;">
+                            <span class="note-mark">(&#10003;)</span>
+                            <div><strong>Golden Rule:</strong> When in doubt, <strong>don't click</strong>. Navigate to
+                                the website directly by typing the URL in your browser.</div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3 class="box-title">Social Media &amp; Privacy Hygiene</h3>
+                        <div class="step-list">
+                            <div class="step-box">
+                                <div class="step-tag">09</div>
+                                <div class="step-copy">
+                                    <h4>Limit What You Share Publicly</h4>
+                                    <p>Attackers use OSINT (Open Source Intelligence) to gather information about
+                                        targets from their social media profiles. Never post your home address, phone
+                                        number, daily routines, travel plans, or anything that could be used to target
+                                        you.</p>
+                                </div>
+                            </div>
+                            <div class="step-box">
+                                <div class="step-tag">10</div>
+                                <div class="step-copy">
+                                    <h4>Audit Your Security Answers</h4>
+                                    <p>Security questions like "What's your mother's maiden name?" are often answerable
+                                        from publicly available information. Treat them like passwords — use a random,
+                                        made-up answer and store it in your password manager.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="simulation.html" class="cta-btn pulse-btn">Open Practice Labs →</a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&#9632; CyberGuard Academy &middot; Learn safely, hack ethically.</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="theory.js"></script>
+</body>
+
+</html>

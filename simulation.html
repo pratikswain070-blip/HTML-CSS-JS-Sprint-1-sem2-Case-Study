@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Academy | Cyber Range</title>
+    <meta name="description"
+        content="Six interactive cybersecurity labs in a live terminal environment. Practice real attack and defense scenarios.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="simulation.css">
+</head>
+
+<body>
+    <!-- Background effect -->
+    <div class="page-grid"></div>
+
+    <!-- Top navigation -->
+    <nav class="top-nav" id="main-nav">
+        <a href="home.html" class="logo">
+            <span class="brand-mark">&#9632;</span>
+            CyberGuard<span class="blink-mark">_</span>Academy
+        </a>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="theory.html">Theory</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="simulation.html" class="active">Practice Labs</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li>
+                <a href="index.html" class="nav-user-btn" id="nav-user-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                    <span id="nav-user-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-wrap">
+        <div class="page-box">
+
+            <div class="section-header">
+                <div class="section-badge">Practice Labs</div>
+                <h2 class="section-title">Interactive Labs</h2>
+                <p class="section-subtitle">Apply what you've learned in a live, risk-free environment. Six hands-on
+                    simulations await.</p>
+            </div>
+
+            <!-- Start labs area -->
+            <div id="launch-box" class="text-center">
+                <div class="launch-card">
+                    <div class="launch-mark">[ &gt;_ ]</div>
+                    <h3>Ready to go hands-on?</h3>
+                    <p>Access the secure terminal environment to begin your practical exercises.</p>
+                    <button id="open-lab-btn" class="cta-btn danger-glow">&#9889; Launch Lab Terminal</button>
+                </div>
+            </div>
+
+            <!-- Practice window -->
+            <div id="lab-console" class="console-box hidden">
+                <div class="terminal-header">
+                    <div class="head-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="terminal-title">root@cyberguard:~ — bash</span>
+                    <button id="close-console-btn" class="close-btn">&#10005;</button>
+                </div>
+                <div class="lab-tabs">
+                    <button class="lab-btn active" data-lab="pwd-lab">01 Password Cracker</button>
+                    <button class="lab-btn" data-lab="phish-lab">02 Phishing Detector</button>
+                    <button class="lab-btn" data-lab="url-lab">03 URL Checker</button>
+                    <button class="lab-btn" data-lab="social-lab">04 Social Privacy</button>
+                    <button class="lab-btn" data-lab="sqli-lab">05 SQL Injection</button>
+                    <button class="lab-btn" data-lab="otp-lab">06 2FA Simulator</button>
+                </div>
+                <div class="terminal-body">
+
+                    <!-- Lab 1 -->
+                    <div id="pwd-lab" class="lab-box lab-panel active">
+                        <h3 class="lab-title">Try: Password Strength Check</h3>
+                        <p class="lab-text">How long would it take a modern GPU array to brute-force your password? Test
+                            the difference between <code>password123</code> and a strong passphrase like
+                            <code>BluePigeonRocket-47!</code>
+                        </p>
+                        <div class="input-row">
+                            <span class="input-label">Target:</span>
+                            <input type="password" id="pwd-input" placeholder="Type any password…">
+                            <button id="crack-btn" class="action-btn">Crack()</button>
+                        </div>
+                        <div id="crack-result" class="result-box"></div>
+                    </div>
+
+                    <!-- Lab 2 -->
+                    <div id="phish-lab" class="lab-box lab-panel hidden">
+                        <h3 class="lab-title">Try: Phishing Email Check</h3>
+                        <p class="lab-text">Analyze this incoming email using the red flags you learned in the Theory
+                            section. Is it legitimate or a phishing attempt?</p>
+                        <div class="mail-box">
+                            <div class="mail-row"><strong>From:</strong> <span
+                                    class="danger-text">support@netflix-update-billing.com</span></div>
+                            <div class="mail-row"><strong>Subject:</strong> &#9888;&#65039; Action Required:
+                                Your Payment Has
+                                Been Declined</div>
+                            <hr style="border-color: #ccc; margin: 10px 0;">
+                            <p>Dear Valued Customer,</p>
+                            <p style="margin-top:8px;">We were unable to process your last payment. Your account will be
+                                <strong>permanently suspended</strong> in 24 hours unless you update your billing
+                                information immediately.
+                            </p>
+                            <p style="margin-top:8px;"><a href="#" style="color:#e50914;">→ Click here to update now</a>
+                            </p>
+                        </div>
+                        <div class="input-row">
+                            <button class="action-btn safe-btn" onclick="checkPhishing(false)">&#10003; Mark SAFE</button>
+                            <button class="action-btn risk-btn" onclick="checkPhishing(true)">Mark PHISHING</button>
+                        </div>
+                        <div id="phish-result" class="result-box"></div>
+                    </div>
+
+                    <!-- Lab 3 -->
+                    <div id="url-lab" class="lab-box lab-panel hidden">
+                        <h3 class="lab-title">Try: Safe URL Check</h3>
+                        <p class="lab-text">A friend sent you a suspicious link. Paste it below to analyze it for
+                            deceptive lookalike domains (e.g., <code>amaz0n</code>) and missing HTTPS encryption.</p>
+                        <div class="input-row">
+                            <span class="input-label">Scan URL:</span>
+                            <input type="text" id="url-input" placeholder="http://amaz0n-login.com/verify">
+                            <button id="scan-btn" class="action-btn">Analyze()</button>
+                        </div>
+                        <div id="url-result" class="result-box"></div>
+                    </div>
+
+                    <!-- Lab 4 -->
+                    <div id="social-lab" class="lab-box lab-panel hidden">
+                        <h3 class="lab-title">Try: Social Privacy Check</h3>
+                        <p class="lab-text">"Alex" just made a public post. Click all the items that represent an
+                            <strong style="color: var(--danger);">oversharing risk</strong> that attackers could
+                            exploit.
+                        </p>
+                        <div class="post-box">
+                            <div class="post-head">
+                                <div class="social-avatar">AK</div>
+                                <div>
+                                    <strong>Alex Cybersecurity</strong><br>
+                                    <span class="post-meta">&#127758; Public · Just now</span>
+                                </div>
+                            </div>
+                            <p style="margin-top:12px;">So excited for my vacation! &#127958;&#65039; Finally leaving
+                                <button class="post-tag risk-chip" onclick="checkSocial(true, this)">123 Baker Street,
+                                    London</button> for 2 weeks! My dog <button class="post-tag safe-chip"
+                                    onclick="checkSocial(false, this)">Biscuit</button> will be looked after.
+                            </p>
+                            <p style="margin-top:8px;">Call me anytime on <button class="post-tag risk-chip"
+                                    onclick="checkSocial(true, this)">(555) 019-8472</button>. Here's my boarding pass!
+                                <button class="post-tag risk-chip" onclick="checkSocial(true, this)">&#128203;
+                                    [Boarding Pass
+                                    w/ Barcode]</button>
+                            </p>
+                        </div>
+                        <div id="social-result" class="result-box" style="margin-top: 15px;"></div>
+                        <button class="action-btn" onclick="resetSocialAudit()" style="margin-top: 10px;">&#8635; Reset Audit</button>
+                    </div>
+
+                    <!-- Lab 5 -->
+                    <div id="sqli-lab" class="lab-box lab-panel hidden">
+                        <h3 class="lab-title">Try: SQL Injection Demo</h3>
+                        <p class="lab-text">The backend runs this vulnerable query:
+                            <code>SELECT * FROM users WHERE username='[IN]' AND password='[IN]'</code>. Try bypassing
+                            it. Hint: use <code>' OR 1=1 --</code> as the password.
+                        </p>
+                        <div class="input-row login-row">
+                            <span class="input-label">Username:</span>
+                            <input type="text" id="user-input" placeholder="admin">
+                            <span class="input-label">Password:</span>
+                            <input type="password" id="pass-input" placeholder="****">
+                            <button id="login-btn" class="action-btn">Login()</button>
+                        </div>
+                        <div id="login-result" class="result-box"></div>
+                    </div>
+
+                    <!-- Lab 6 -->
+                    <div id="otp-lab" class="lab-box lab-panel hidden">
+                        <h3 class="lab-title">Try: 2FA Protection Demo</h3>
+                        <p class="lab-text">An attacker has your stolen password: <code>MySecret123</code>. Watch how
+                            Two-Factor Authentication stops them cold — even with the correct password.</p>
+                        <div class="input-row">
+                            <button id="attack-btn" class="action-btn risk-btn">&#128275; Simulate Attacker
+                                Login</button>
+                        </div>
+                        <div id="otp-result" class="result-box"></div>
+                        <div id="otp-prompt" class="hidden otp-box">
+                            <p>&#128241; <span id="otp-text">A 6-digit code has been sent to your phone.</span></p>
+                            <div class="input-row">
+                                <span class="input-label">Code:</span>
+                                <input type="text" id="otp-input" placeholder="e.g. 123456" maxlength="6">
+                                <button id="verify-btn" class="action-btn">Verify()</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&#9632; CyberGuard Academy &middot; Learn safely, hack ethically.</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="simulation.js"></script>
+</body>
+
+</html>

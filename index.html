@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Academy | Sign In</title>
+    <meta name="description"
+        content="Sign in or create a free account to access CyberGuard Academy — cybersecurity education portal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body class="locked">
+    <!-- Background effect -->
+    <div class="page-grid"></div>
+
+    <!-- Top navigation -->
+    <nav class="top-nav" id="main-nav">
+        <a href="index.html" class="logo">
+            <span class="brand-mark">&#9632;</span>
+            CyberGuard<span class="blink-mark">_</span>Academy
+        </a>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="theory.html">Theory</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="simulation.html">Practice Labs</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li>
+                <a href="index.html" class="nav-user-btn active" id="nav-user-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                    <span id="nav-user-text">Login</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-wrap">
+        <div class="page-box">
+
+            <!-- Sign-in message shown before login -->
+            <div class="login-banner">
+                <div class="banner-row">
+                    <div class="banner-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2>Please sign in to continue</h2>
+                        <p>Create a free account or sign in below to access all lessons, labs, and your certificate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login area -->
+            <div id="auth-box" class="auth-layout">
+                <div class="auth-card">
+
+                    <!-- Switch between sign in and sign up -->
+                    <div class="form-tabs">
+                        <button class="form-tab active" id="login-tab" onclick="showAuthTab('login')">Sign In</button>
+                        <button class="form-tab" id="signup-tab" onclick="showAuthTab('register')">Create
+                            Account</button>
+                    </div>
+
+                    <!-- Sign in form -->
+                    <div id="login-box">
+                        <div class="form-head">
+                            <div class="form-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to track your progress and access your certificate.</p>
+                        </div>
+                        <form id="login-form" class="user-form" onsubmit="handleLogin(event)">
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                    <input type="email" id="login-email" class="form-input"
+                                        placeholder="you@example.com" required>
+                                </div>
+                                <span class="error-text" id="login-email-err"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    <input type="password" id="login-password" class="form-input" placeholder="••••••••"
+                                        required>
+                                    <button type="button" class="show-pass-btn" onclick="togglePwd('login-password', this)"
+                                        aria-label="Toggle password">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                                            <circle cx="12" cy="12" r="3" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <span class="error-text" id="login-pwd-err"></span>
+                            </div>
+                            <div class="form-row">
+                                <label class="checkbox-label"><input type="checkbox" id="remember-me"> Remember
+                                    me</label>
+                                <a href="#" class="help-link" onclick="return false;">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                    <polyline points="10 17 15 12 10 7" />
+                                    <line x1="15" y1="12" x2="3" y2="12" />
+                                </svg>
+                                Sign In
+                            </button>
+                            <div id="login-msg" class="auth-feedback"></div>
+                        </form>
+                        <p class="switch-text">No account yet? <a href="#"
+                                onclick="showAuthTab('register'); return false;">Create one free</a></p>
+                    </div>
+
+                    <!-- Sign up form -->
+                    <div id="signup-box" class="hidden">
+                        <div class="form-head">
+                            <div class="form-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <line x1="19" y1="8" x2="19" y2="14" />
+                                    <line x1="22" y1="11" x2="16" y2="11" />
+                                </svg>
+                            </div>
+                            <h2>Join CyberGuard</h2>
+                            <p>Create your free account to start your cybersecurity journey.</p>
+                        </div>
+                        <form id="register-form" class="user-form" onsubmit="handleRegister(event)">
+                            <div class="form-group">
+                                <label for="reg-name">Full Name</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="8" r="4" />
+                                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                                    </svg>
+                                    <input type="text" id="reg-name" class="form-input" placeholder="Alex Cybersecurity"
+                                        required>
+                                </div>
+                                <span class="error-text" id="reg-name-err"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email Address</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                    <input type="email" id="reg-email" class="form-input" placeholder="you@example.com"
+                                        required>
+                                </div>
+                                <span class="error-text" id="reg-email-err"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    <input type="password" id="reg-password" class="form-input"
+                                        placeholder="Min. 8 characters" required>
+                                    <button type="button" class="show-pass-btn" onclick="togglePwd('reg-password', this)"
+                                        aria-label="Toggle password">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                                            <circle cx="12" cy="12" r="3" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="pass-bar">
+                                    <div id="pass-fill" class="pass-fill"></div>
+                                </div>
+                                <span id="pass-text" class="pass-text"></span>
+                                <span class="error-text" id="reg-pwd-err"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-confirm">Confirm Password</label>
+                                <div class="input-box">
+                                    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 12l2 2 4-4" />
+                                        <rect x="3" y="11" width="18" height="11" rx="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    <input type="password" id="reg-confirm" class="form-input"
+                                        placeholder="Re-enter password" required>
+                                </div>
+                                <span class="error-text" id="reg-confirm-err"></span>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                                Create Account
+                            </button>
+                            <div id="signup-msg" class="auth-feedback"></div>
+                        </form>
+                        <p class="switch-text">Already have an account? <a href="#"
+                                onclick="showAuthTab('login'); return false;">Sign in</a></p>
+                    </div>
+                </div>
+
+                <!-- Side info panel -->
+                <div class="side-box">
+                    <div class="side-copy">
+                        <div class="side-mark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Your Learning Hub</h3>
+                        <p>Track modules, earn your certificate, and build your cybersecurity profile.</p>
+                        <ul class="side-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Progress tracked across all modules
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Personalized certificate with your name
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                100% free — no credit card needed
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile area after login -->
+            <div id="profile-box" class="hidden">
+                <div class="user-card">
+                    <div class="user-avatar" id="avatar-text">AK</div>
+                    <div class="profile-info">
+                        <h2 id="user-name">Alex Cybersecurity</h2>
+                        <p id="user-email">alex@example.com</p>
+                        <span class="user-tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            CyberGuard Student
+                        </span>
+                    </div>
+                    <button class="logout-btn" onclick="handleLogout()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                            <polyline points="16 17 21 12 16 7" />
+                            <line x1="21" y1="12" x2="9" y2="12" />
+                        </svg>
+                        Sign Out
+                    </button>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <div class="stat-icon stat-blue">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-number">3</div>
+                            <div class="stat-text">Modules Available</div>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-icon stat-green">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-number" id="labs-count">0</div>
+                            <div class="stat-text">Labs Completed</div>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stat-icon stat-gold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="6" />
+                                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="stat-number" id="cert-count">0</div>
+                            <div class="stat-text">Certificates Earned</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning progress -->
+                <div class="progress-box">
+                    <h3 class="progress-head">&gt;_ Progress Tracker</h3>
+
+                    <!-- Theory progress -->
+                    <div class="progress-item">
+                        <div class="progress-top">
+                            <span class="progress-name">Theory Modules</span>
+                            <span class="progress-rate" id="theory-rate">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="theory-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="theory-text">0 / 3 tabs visited</span>
+                    </div>
+
+                    <!-- Lab progress -->
+                    <div class="progress-item">
+                        <div class="progress-top">
+                            <span class="progress-name">Interactive Labs</span>
+                            <span class="progress-rate" id="labs-rate">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="labs-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="labs-text">0 / 6 labs completed</span>
+                    </div>
+
+                    <!-- Quiz progress -->
+                    <div class="progress-item">
+                        <div class="progress-top">
+                            <span class="progress-name">Final Quiz</span>
+                            <span class="progress-rate" id="quiz-rate">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="quiz-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="quiz-text">Not attempted yet</span>
+                    </div>
+
+                    <!-- Certificate progress -->
+                    <div class="progress-item">
+                        <div class="progress-top">
+                            <span class="progress-name">Certificate</span>
+                            <span class="progress-rate" id="cert-rate">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="cert-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="progress-text" id="cert-text">Complete the quiz to earn your certificate</span>
+                    </div>
+
+                    <!-- Overall progress -->
+                    <div class="overall-score">
+                        <span class="overall-label">Overall Completion</span>
+                        <span class="overall-num" id="total-rate">0%</span>
+                    </div>
+                </div>
+
+                <div class="path-box">
+                    <h3 class="profile-section-title">Your Learning Path</h3>
+                    <div class="path-list">
+                        <div class="path-item">
+                            <div class="path-icon path-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                            </div>
+                            <div class="path-copy">
+                                <h4>Cybersecurity Fundamentals</h4>
+                                <p>CIA Triad, threat actors, and key terminology</p>
+                            </div>
+                            <a href="theory.html" class="path-btn">Start
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon path-red">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="12" />
+                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                </svg>
+                            </div>
+                            <div class="path-copy">
+                                <h4>Types of Cyber Attacks</h4>
+                                <p>Malware, phishing, SQL injection, DoS &amp; MitM</p>
+                            </div>
+                            <a href="theory.html" class="path-btn">Start
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="path-item">
+                            <div class="path-icon path-green">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <div class="path-copy">
+                                <h4>Prevention Strategies</h4>
+                                <p>Passwords, 2FA, network safety &amp; privacy hygiene</p>
+                            </div>
+                            <a href="theory.html" class="path-btn">Start
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&#9632; CyberGuard Academy &middot; Learn safely, hack ethically.</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Academy | Home</title>
+    <meta name="description"
+        content="CyberGuard Academy — free cybersecurity education. Master fundamentals, defend against attacks, and earn your certificate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <!-- Background effect -->
+    <div class="page-grid"></div>
+
+    <!-- Top navigation -->
+    <nav class="top-nav" id="main-nav">
+        <a href="home.html" class="logo">
+            <span class="brand-mark">&#9632;</span>
+            CyberGuard<span class="blink-mark">_</span>Academy
+        </a>
+        <ul class="nav-list">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="theory.html">Theory</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="simulation.html">Practice Labs</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li>
+                <a href="index.html" class="nav-user-btn" id="nav-user-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                    <span id="nav-user-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-wrap">
+        <div class="page-box">
+
+            <!-- Main intro section -->
+            <div class="hero-box">
+                <div class="hero-tag">Free Cybersecurity Learning</div>
+                <h1 class="hero-title" data-text="Get Secure">Get Secure</h1>
+                <p class="hero-text">Master cybersecurity fundamentals. Defend against real-world attacks.<br>Earn
+                    your certification — all for free.</p>
+                <div class="hero-actions">
+                    <a href="theory.html" class="cta-btn">Start Learning →</a>
+                    <a href="simulation.html" class="cta-btn cta-secondary">Try Simulations</a>
+                </div>
+
+                <!-- Quick highlights -->
+                <div class="stats-box">
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="6">0</span><span class="stat-sign">+</span>
+                        <span class="stat-label">Attack Types Covered</span>
+                    </div>
+                    <div class="stats-line"></div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="6">0</span><span class="stat-sign"></span>
+                        <span class="stat-label">Interactive Labs</span>
+                    </div>
+                    <div class="stats-line"></div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-sign">%</span>
+                        <span class="stat-label">Beginner Friendly</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main features -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-mark">&#9642; &#9642;</div>
+                    <h3>Deep Theory</h3>
+                    <p>Three comprehensive modules covering Cybersecurity fundamentals, attack types, and real-world
+                        prevention — explained with everyday analogies.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-mark">[ &gt;_ ]</div>
+                    <h3>Hands-On Labs</h3>
+                    <p>Six interactive simulations in a live terminal environment. Crack passwords, detect phishing,
+                        exploit SQL injection, and more.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-mark">&#9733; &#9733;</div>
+                    <h3>Quiz &amp; Certificate</h3>
+                    <p>Prove your knowledge with a 10-question quiz. Score 100% to earn a personalized Certificate of
+                        Completion.</p>
+                </div>
+            </div>
+
+            <!-- Plans section -->
+            <div class="plan-section">
+                <div class="section-header">
+                    <div class="section-badge">Pricing Plans</div>
+                    <h2 class="section-title">Choose Your Plan</h2>
+                    <p class="section-subtitle">Start free. Upgrade when you're ready to go deeper.</p>
+                </div>
+
+                <div class="plan-grid">
+
+                    <!-- Free plan -->
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-badge">FREE</div>
+                            <div class="plan-price">$0 <span>/month</span></div>
+                            <p class="plan-desc">Everything you need to get started with cybersecurity.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>&#10003; Theory: 3 learning modules</li>
+                            <li>&#10003; 6 video courses</li>
+                            <li>&#10003; 3 basic simulations</li>
+                            <li>&#10003; Final quiz</li>
+                            <li>&#10003; Progress tracking</li>
+                            <li class="disabled">&#10007; Advanced simulations</li>
+                            <li class="disabled">&#10007; Priority support</li>
+                        </ul>
+                        <a href="index.html" class="plan-btn">Get Started Free</a>
+                    </div>
+
+                    <!-- Premium plan -->
+                    <div class="plan-card featured">
+                        <div class="plan-top-tag">MOST POPULAR</div>
+                        <div class="plan-header">
+                            <div class="plan-badge">PREMIUM</div>
+                            <div class="plan-price">$9 <span>/month</span></div>
+                            <p class="plan-desc">Full access to all labs, advanced tools and priority support.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>&#10003; Everything in Free</li>
+                            <li>&#10003; All 6 advanced simulations</li>
+                            <li>&#10003; Downloadable certificate (PDF)</li>
+                            <li>&#10003; New labs every month</li>
+                            <li>&#10003; Priority email support</li>
+                            <li>&#10003; CTF challenge access</li>
+                            <li>&#10003; Ad-free experience</li>
+                        </ul>
+                        <a href="index.html" class="plan-btn plan-main-btn">Upgrade to Premium</a>
+                    </div>
+
+                    <!-- Team plan -->
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <div class="plan-badge">INSTITUTIONAL</div>
+                            <div class="plan-price">Custom <span>/team</span></div>
+                            <p class="plan-desc">Tailored access for schools, colleges and training programs.</p>
+                        </div>
+                        <ul class="plan-features">
+                            <li>&#10003; Everything in Premium</li>
+                            <li>&#10003; Team dashboard</li>
+                            <li>&#10003; Bulk student accounts</li>
+                            <li>&#10003; Instructor analytics</li>
+                            <li>&#10003; Custom branding</li>
+                            <li>&#10003; Dedicated account manager</li>
+                            <li>&#10003; SLA support</li>
+                        </ul>
+                        <a href="mailto:contact@cyberguard.academy" class="plan-btn">Contact Us</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&#9632; CyberGuard Academy &middot; Learn safely, hack ethically.</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,346 @@
+/* ================================================================
+    CyberGuard Academy — simulation.css
+    Styles used only on the practice labs page.
+    ================================================================ */
+
+/* ---- Start lab card ---- */
+.launch-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.launch-mark {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.launch-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.launch-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* ---- Main practice window ---- */
+.console-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #040711;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 212, 255, 0.05);
+    font-family: var(--font-mono);
+}
+
+.terminal-header {
+    background: #0c1018;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.head-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red {
+    background: #ff5f57;
+}
+
+.dot-yellow {
+    background: #febc2e;
+}
+
+.dot-green {
+    background: #28c840;
+}
+
+.terminal-title {
+    color: #4a5568;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.close-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+}
+
+/* ---- Lab button row ---- */
+.lab-tabs {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background: #060910;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.lab-btn {
+    background: transparent;
+    color: #4a5568;
+    border: 1px solid transparent;
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.lab-btn:hover {
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.lab-btn.active {
+    color: var(--accent);
+    border-color: var(--border-accent);
+    background: var(--accent-dim);
+}
+
+/* ---- Main lab area ---- */
+.terminal-body {
+    padding: 24px;
+    min-height: 400px;
+    overflow-y: auto;
+}
+
+.lab-title {
+    color: #28c840;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+}
+
+.lab-text {
+    color: #6b7280;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    border-left: 2px solid #1e2a3a;
+    padding-left: 12px;
+}
+
+.lab-panel {
+    display: none;
+}
+
+.lab-panel.active {
+    display: block;
+}
+
+.lab-panel.hidden {
+    display: none !important;
+}
+
+/* ---- Input row ---- */
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.input-label {
+    color: #6b7280;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.terminal-body input[type="text"],
+.terminal-body input[type="password"] {
+    background: #0c1220;
+    border: 1px solid #1e2a3a;
+    color: var(--text-primary);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+    min-width: 200px;
+}
+
+.terminal-body input:focus {
+    border-color: var(--border-accent);
+}
+
+/* ---- Action button ---- */
+.action-btn {
+    background: #131c2e;
+    border: 1px solid #1e2a3a;
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.action-btn:hover {
+    background: #1a2540;
+    border-color: #2a3a5c;
+}
+
+.action-btn.safe-btn:hover {
+    background: var(--success-dim);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: var(--success);
+}
+
+.action-btn.risk-btn:hover {
+    background: var(--danger-dim);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: var(--danger);
+}
+
+/* ---- Result text ---- */
+.result-box {
+    color: #28c840;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    min-height: 24px;
+    padding: 0.5rem 0;
+}
+
+/* ---- Sample email box ---- */
+.mail-box {
+    background: #fff;
+    color: #1a1a2e;
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mail-row {
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+}
+
+/* ---- Sample social post ---- */
+.post-box {
+    background: #0f1623;
+    border: 1px solid #1e2a3a;
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.post-head {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.post-meta {
+    font-size: 0.75rem;
+    color: #4a5568;
+}
+
+.post-tag {
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin: 0 2px;
+}
+
+.risk-chip {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.safe-chip {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.risk-chip:hover,
+.safe-chip:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+/* ---- 2FA message box ---- */
+.otp-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: var(--radius-sm);
+    color: var(--warning);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.login-row {
+    gap: 10px;
+    flex-wrap: wrap;
+}

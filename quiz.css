@@ -1,0 +1,315 @@
+/* ================================================================
+    CyberGuard Academy — quiz.css
+    Styles used only on the quiz page.
+    ================================================================ */
+
+/* ---- Quiz area ---- */
+.quiz-card {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.question-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+    border-left: 4px solid var(--accent);
+    transition: all var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.question-box:hover {
+    border-color: var(--border-accent);
+    transform: translateX(4px);
+}
+
+.question-title {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.question-tag {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border: 1px solid var(--border-accent);
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 6px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.radio-label:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+}
+
+.radio-label input {
+    accent-color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+#quiz-msg {
+    font-size: 1rem;
+    padding: 1rem 0;
+}
+
+/* ---- Certificate card ---- */
+.cert-card {
+    max-width: 700px;
+    margin: 3rem auto 0;
+}
+
+.cert-frame {
+    background: linear-gradient(145deg, #0f1420 0%, #080b12 100%);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.12), inset 0 0 60px rgba(0, 212, 255, 0.03);
+}
+
+.cert-mark {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cert-top-text {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cert-frame h2 {
+    font-family: Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin: 0.5rem 0 1.5rem;
+    background: linear-gradient(135deg, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cert-mid-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.cert-name-box {
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed var(--border-accent);
+    color: var(--accent);
+    font-size: 2rem;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    font-family: Georgia, serif;
+    outline: none;
+    display: block;
+    margin: 0.75rem auto 1rem;
+}
+
+.cert-course {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.cert-course-title {
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.cert-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.cert-sign {
+    text-align: center;
+}
+
+.cert-sign p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sign-line {
+    width: 120px;
+    height: 1px;
+    background: var(--border-subtle);
+    margin: 0 auto;
+}
+
+.seal {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--accent), #0099bb);
+    color: var(--bg-main);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.7rem;
+    text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    transform: rotate(-15deg);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Full-screen video area, hidden at first */
+#cert-video-box {
+    display: none;
+    /* shown after a perfect score */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+/* This class shows the video area */
+#cert-video-box.active {
+    display: flex;
+}
+
+/* Video fills the screen */
+#cert-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* fills the screen nicely */
+    border: none;
+}
+
+/* Skip button in the corner */
+#cert-skip-btn {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    background: rgba(0, 0, 0, 0.70);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.40);
+    padding: 9px 20px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#cert-skip-btn:hover {
+    background: rgba(0, 255, 65, 0.20);
+    border-color: #00ff41;
+}
+
+/* ====== Reward video area ====== */
+
+/* Hidden until JS shows it */
+#cert-video-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Added by JS to show the video */
+#cert-video-box.active {
+    display: flex;
+}
+
+/* Video fills the full screen */
+#cert-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+/* Skip button */
+#cert-skip-btn {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #00ff41;
+    border: 1px solid rgba(0, 255, 65, 0.45);
+    padding: 9px 22px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 10000;
+}
+
+#cert-skip-btn:hover {
+    background: rgba(0, 255, 65, 0.20);
+    border-color: #00ff41;
+}
+
+/* ====== Smaller screens ====== */
+@media (max-width: 768px) {
+    .cert-bottom {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .sign-line {
+        width: 80px;
+    }
+}

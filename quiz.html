@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard Academy | Certification</title>
+    <meta name="description"
+        content="Prove your cybersecurity knowledge with a 5-question quiz and earn a personalized Certificate of Completion.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+
+<body>
+    <!-- Background effect -->
+    <div class="page-grid"></div>
+
+    <!-- Top navigation -->
+    <nav class="top-nav" id="main-nav">
+        <a href="home.html" class="logo">
+            <span class="brand-mark">&#9632;</span>
+            CyberGuard<span class="blink-mark">_</span>Academy
+        </a>
+        <ul class="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="theory.html">Theory</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="simulation.html">Practice Labs</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li>
+                <a href="index.html" class="nav-user-btn" id="nav-user-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                    <span id="nav-user-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-wrap">
+        <div class="page-box">
+
+            <div class="section-header">
+                <div class="section-badge">Final Quiz</div>
+                <h2 class="section-title">Prove Your Knowledge</h2>
+                <p class="section-subtitle">Answer all 5 questions correctly to earn your personalized Certificate of
+                    Completion.</p>
+            </div>
+
+            <div id="quiz-box" class="quiz-card">
+                <form id="quiz-form">
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q1</span> What does the "C" in the CIA Triad stand
+                            for?</p>
+                        <label class="radio-label"><input type="radio" name="q1" value="a"> Cryptography</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="b"> Confidentiality</label>
+                        <label class="radio-label"><input type="radio" name="q1" value="c"> Compliance</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q2</span> Which of these is an example of a
+                            phishing attempt?</p>
+                        <label class="radio-label"><input type="radio" name="q2" value="a"> An email from
+                            support@paypa<strong>1</strong>.com asking you to reset your password</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="b"> A routine software update
+                            notification from your OS</label>
+                        <label class="radio-label"><input type="radio" name="q2" value="c"> A two-factor authentication
+                            code sent to your phone</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q3</span> What attack does the input
+                            <code>' OR 1=1 --</code> exploit?
+                        </p>
+                        <label class="radio-label"><input type="radio" name="q3" value="a"> Ransomware</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="b"> DoS Attack</label>
+                        <label class="radio-label"><input type="radio" name="q3" value="c"> SQL Injection</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q4</span> Which is the MOST effective defense
+                            against a stolen password?</p>
+                        <label class="radio-label"><input type="radio" name="q4" value="a"> Using a very long
+                            password</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="b"> Enabling Two-Factor
+                            Authentication (2FA)</label>
+                        <label class="radio-label"><input type="radio" name="q4" value="c"> Changing your password every
+                            week</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q5</span> What should you do first when receiving
+                            an urgent email asking for personal info?</p>
+                        <label class="radio-label"><input type="radio" name="q5" value="a"> Click the link to see if
+                            it's real</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="b"> Verify the sender address
+                            and contact the organization via its official website</label>
+                        <label class="radio-label"><input type="radio" name="q5" value="c"> Forward it to your friends
+                            as a warning</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q6</span> What does VPN stand for?</p>
+                        <label class="radio-label"><input type="radio" name="q6" value="a"> Virtual Private
+                            Network</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="b"> Virtual Public
+                            Network</label>
+                        <label class="radio-label"><input type="radio" name="q6" value="c"> Verified Protection
+                            Node</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q7</span> Which type of malware locks your files
+                            and demands payment to restore them?</p>
+                        <label class="radio-label"><input type="radio" name="q7" value="a"> Spyware</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="b"> Adware</label>
+                        <label class="radio-label"><input type="radio" name="q7" value="c"> Ransomware</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q8</span> What is the safest way to use
+                            public Wi-Fi?</p>
+                        <label class="radio-label"><input type="radio" name="q8" value="a"> Only visit HTTP
+                            websites</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="b"> Connect through a
+                            VPN</label>
+                        <label class="radio-label"><input type="radio" name="q8" value="c"> Disable your firewall for
+                            faster speed</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q9</span> What does "HTTPS" in a website
+                            address tell you?</p>
+                        <label class="radio-label"><input type="radio" name="q9" value="a"> The website is
+                            government-approved</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="b"> The website loads faster
+                            than HTTP</label>
+                        <label class="radio-label"><input type="radio" name="q9" value="c"> Your connection to the
+                            website is encrypted</label>
+                    </div>
+                    <div class="question-box">
+                        <p class="question-title"><span class="question-tag">Q10</span> Which of these is the strongest
+                            password?</p>
+                        <label class="radio-label"><input type="radio" name="q10" value="a"> password123</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="b"> John1990</label>
+                        <label class="radio-label"><input type="radio" name="q10" value="c"> T#9kL!mZ2&amp;qP</label>
+                    </div>
+                    <button type="submit" class="cta-btn mt-2">Submit Answers</button>
+                    <div id="quiz-msg" class="mt-2"></div>
+                </form>
+            </div>
+
+
+            <!-- Certificate card -->
+            <div id="cert-box" class="cert-card hidden">
+                <div class="cert-frame">
+                    <div class="cert-mark">&#9632;</div>
+                    <p class="cert-top-text">CyberGuard Academy presents</p>
+                    <h2>Certificate of Completion</h2>
+                    <p class="cert-mid-text">This certifies that</p>
+                    <input type="text" id="cert-user-name" placeholder="Your Full Name" class="cert-name-box">
+                    <p class="cert-course">has successfully completed the</p>
+                    <h3 class="cert-course-title">Cybersecurity Foundations Course</h3>
+                    <p class="cert-date">Awarded on <span id="cert-date"></span></p>
+                    <div class="cert-bottom">
+                        <div class="cert-sign">
+                            <div class="sign-line"></div>
+                            <p>Course Instructor</p>
+                        </div>
+                        <div class="seal">&#9632;<br>CERTIFIED<br>SECURE</div>
+                        <div class="cert-sign">
+                            <div class="sign-line"></div>
+                            <p>CyberGuard Academy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>&#9632; CyberGuard Academy &middot; Learn safely, hack ethically.</p>
+    </footer>
+
+    <!-- Full-screen reward video -->
+    <div id="cert-video-box">
+        <video id="cert-video-player" src="cert_video.mp4" playsinline></video>
+        <button id="cert-skip-btn" onclick="skipCertVideo()">Skip &rarr;</button>
+    </div>
+
+    <script src="common.js"></script>
+    <script src="quiz.js"></script>
+</body>
+
+</html>
